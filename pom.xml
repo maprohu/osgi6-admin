@@ -20,6 +20,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
                         <Embed-Dependency>*;scope=compile|runtime</Embed-Dependency>
                         <Embed-Transitive>true</Embed-Transitive>
                         <Import-Package> !sun.*, !scala.reflect.*, * </Import-Package>
+                        <Bundle-Activator>osgi6.admin.AdminActivator</Bundle-Activator>
                     </instructions>
                 </configuration>
             </plugin>
@@ -45,6 +46,11 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
         </dependency>
         <dependency>
             <groupId>osgi6</groupId>
+            <artifactId>osgi6-lib-multi-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>osgi6</groupId>
             <artifactId>osgi6-lib-admin</artifactId>
         </dependency>
         <dependency>
@@ -58,6 +64,10 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
         <dependency>
             <groupId>osgi6</groupId>
             <artifactId>osgi6-akka-slf4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>maprohu</groupId>
+            <artifactId>scala-ext-common</artifactId>
         </dependency>
 
         <dependency>

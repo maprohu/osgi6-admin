@@ -25,9 +25,11 @@ class AdminActivator extends ActorSystemActivator(
     import input.actorSystem.dispatcher
 
     ContextApiActivator.activate(
+      ContextApi.registry,
       { hasCtx =>
         hasCtx.apiContext.map({ c =>
           MultiApiActivator.activate(
+            MultiApi.registry,
             activate(
               input.bundleContext,
               c
