@@ -56,9 +56,12 @@ object AdminActivator {
           processAdminRequest(fn, "text/html")
 
         def processAdminRequest(fn: => String, ct: String = "text/plain") = {
-          processAdminRequestStream({ os =>
-            os.write(fn.getBytes)
-          })
+          processAdminRequestStream(
+            { os =>
+              os.write(fn.getBytes)
+            },
+            ct
+          )
         }
 
         def processAdminRequestStream(fn: OutputStream => Unit, ct: String = "text/plain") = {
